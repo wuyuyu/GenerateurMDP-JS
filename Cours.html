@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours de la semaine sur JS</title>
+</head>
+
+<body>
+    <h1 id='titre'>Cours de la semaine sur JS</h1>
+    <p id='text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni quam placeat qui amet quibusdam
+        debitis
+        vitae. Eos, pariatur iure, corporis reiciendis sed officia sunt consequuntur consequatur quidem assumenda illum
+        ducimus nam laboriosam molestias obcaecati, nihil voluptatibus quia. Ipsa provident quam debitis distinctio,
+        magnam amet modi molestias aliquam, facilis, deserunt harum cum exercitationem. Reprehenderit esse in soluta
+        molestias, iure atque, vero odio aperiam sit amet nostrum quis magni tempora repellat necessitatibus delectus
+        qui suscipit similique. Error, rerum dicta! Perspiciatis facilis deleniti minima aliquid ipsam modi,
+        repellendus, officiis tempora ipsum quod voluptas quis quam error rem, velit nesciunt temporibus quibusdam
+        ratione. Quia!</p>
+    <p id='text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni quam placeat qui amet quibusdam
+        debitis
+        vitae. Eos, pariatur iure, corporis reiciendis sed officia sunt consequuntur consequatur quidem assumenda illum
+        ducimus nam laboriosam molestias obcaecati, nihil voluptatibus quia. Ipsa provident quam debitis distinctio,
+        magnam amet modi molestias aliquam, facilis, deserunt harum cum exercitationem. Reprehenderit esse in soluta
+        molestias, iure atque, vero odio aperiam sit amet nostrum quis magni tempora repellat necessitatibus delectus
+        qui suscipit similique. Error, rerum dicta! Perspiciatis facilis deleniti minima aliquid ipsam modi,
+        repellendus, officiis tempora ipsum quod voluptas quis quam error rem, velit nesciunt temporibus quibusdam
+        ratione. Quia!</p>
+    <p id='text'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni quam placeat qui amet quibusdam
+        debitis
+        vitae. Eos, pariatur iure, corporis reiciendis sed officia sunt consequuntur consequatur quidem assumenda illum
+        ducimus nam laboriosam molestias obcaecati, nihil voluptatibus quia. Ipsa provident quam debitis distinctio,
+        magnam amet modi molestias aliquam, facilis, deserunt harum cum exercitationem. Reprehenderit esse in soluta
+        molestias, iure atque, vero odio aperiam sit amet nostrum quis magni tempora repellat necessitatibus delectus
+        qui suscipit similique. Error, rerum dicta! Perspiciatis facilis deleniti minima aliquid ipsam modi,
+        repellendus, officiis tempora ipsum quod voluptas quis quam error rem, velit nesciunt temporibus quibusdam
+        ratione. Quia!</p>
+    <script>
+        const f3 = (a, b) => a + b;
+        console.log(f3(3, 5));
+
+        const body = document.querySelector('body');
+        body.addEventListener('click', onClick());
+
+
+        function onClick() {
+            alert('Aiieee !')
+        }
+
+        //const p = document.getElementById('test');
+        //p.textContent = p.textContent.substr(0, 60) + '...';
+
+        /* =======================================================================
+         TP: creation d'une méthode truncate un integer en prenant comme parametre 
+        ==========================================================================*/
+       
+        String.prototype.truncate = function (i) {
+            // this.textContent = this.textContent.substr(0, i) + '...';
+            //return this.textContent;
+            return this.substr(0, i);
+        };
+
+        // il faut utiliser innerHTML ou textContent pour obtenir le text des élements selectionnées
+        //  -------------------- 1) par innerHTML:
+        for (let p of document.querySelectorAll("p")) {
+            p.innerHTML = p.innerHTML.truncate(100);
+        }
+        /* ------------------- 2) par textContent: 
+                for (let p of document.querySelectorAll("p")) {
+                    p.textContent = p.textContent.truncate(10);
+                }
+        */
+
+    </script>
+    <script src="Cours.js"></script>
+
+</body>
+<style>
+    body {
+        background-color: pink;
+    }
+</style>
+
+</html>
