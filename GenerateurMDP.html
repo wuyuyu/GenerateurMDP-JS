@@ -1,36 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Générateur de mot de passe</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <h1>Générateur de Mot de Passe</h1>
-<em>Techno: Html, CSS, Javascript </em>
+    <em>Techno: Html, CSS, Javascript </em>
+
+    <input type='range' value='40' />
+
+    <p class="number">#1</p>
+  <h1>Custom<br> Checkboxes / radio buttons</h1>
 
 
-<div class="ondisplay">
-  
-  <section title=".slideOne">
-    <!-- .slideOne -->
-    <div class="slideOne">  
-      <input type="checkbox" value="None" id="slideOne" name="check" checked />
-      <label for="slideOne"></label>
+<section class="content">
+  <ul class="list">
+    <li class="list__item">
+      <label class="label--checkbox">
+      	<input type="checkbox" class="checkbox" checked>
+          Item 1
+      </label>
+    </li>
+    <li class="list__item">
+      <label class="label--checkbox">
+      	<input type="checkbox" class="checkbox">
+          Item 2
+      </label>
+    </li>
+    <li class="list__item">
+      <label class="label--checkbox">
+      	<input type="checkbox" class="checkbox">
+          Item 3
+      </label>
+    </li>
+    <li class="list__item">
+      <label class="label--checkbox">
+      	<input type="checkbox" class="checkbox">
+          Item 4
+      </label>
+    </li>
+  </ul>
+      
+  <ul class="list">
+    <li class="list__item">
+      <label class="label--radio">
+      	<input type="radio" class="radio" checked  name="foo">
+          Item 1
+      </label>
+    </li>
+    <li class="list__item">
+      <label class="label--radio">
+      	<input type="radio" class="radio" name="foo">
+          Item 2
+      </label>
+    </li>
+    <li class="list__item">
+      <label class="label--radio">
+      	<input type="radio" class="radio" name="foo">
+          Item 3
+      </label>
+    </li>
+    <li class="list__item">
+      <label class="label--radio">
+      	<input type="radio" class="radio" name="foo">
+          Item 4
+      </label>
+    </li>
+  </ul>
+</section>
+      
+<footer class="footer">
+	<a href="https://www.twitter.com/sambego" target="_blank" class="btn btn--twitter">
+    <i class="fa fa-twitter"></i>
+  </a>
+ 
+
+
     </div>
-    <!-- end .slideOne -->
-  </section>
-
-  <section title=".roundedTwo">
-    <!-- .roundedTwo -->
-    <div class="roundedTwo">
-      <input type="checkbox" value="None" id="roundedTwo" name="check" checked />
-      <label for="roundedTwo"></label>
-    </div>
-    <!-- end .roundedTwo -->
-  </section>
-  
-</div>
 </body>
+
 </html>
