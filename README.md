@@ -1,8 +1,10 @@
 # GenerateurMDP-JS
 JSbin ( coder en ligne) https://jsbin.com/?html,output
+
 MDN (doc en ligne) https://developer.mozilla.org/fr/docs/Web/JavaScript
+
 Support du cours: https://github.com/2itech-cda/
-05 oct 2020 JavaScript
+
 Stack Vincent: Front: HTML / CSS / JS ; 
 Back: GO ; 
 BDD: MongoDB , Node
