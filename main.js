@@ -5,18 +5,34 @@ const p = new Password();
 const options = document.querySelector('#options');
 const size = document.querySelector('#size');
 const slider = document.querySelector('#slider');
+const displayer = document.querySelector('#displayer');
 
+displayer.textContent = p.generate(10);
+
+refresh();
 
 // addEventListener('type', callback(fonction de rapelle, ), boolean: direction de l'événement)
 size.addEventListener('input', event => {
-
+    
     console.log(event);
     console.log(event.target === size); // élévement c'est size
-
+    
     slider.value = size.value;
+    refresh();
 }); 
 
-slider.addEventListener('input', e => { size.value = slider.value });
+slider.addEventListener('input', e => { size.value = slider.value; refresh(); });
+
+options.addEventListener('click', e => { 
+    console.log(e);
+    console.log(e.target);
+    const evt = e.target;
+    
+    if( evt.type && evt.type === 'checkbox'){
+        evt.checked ? p.include(evt.value) : p.exclude(evt.value);
+        refresh();
+    }
+})
 
 
 // pour récupérer l'endroit où utilisateur a cliqué sur la page
@@ -27,7 +43,13 @@ body.addEventListener('click', evt => {
 
 
 
-rangeFormList();
+
+
+
+function refresh() {
+    displayer.textContent = p.generate(size.value);
+    rangeFormList();
+};
 
 function rangeFormList() {
     options.innerHTML='';

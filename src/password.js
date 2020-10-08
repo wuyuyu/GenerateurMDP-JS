@@ -37,11 +37,11 @@ class Password {
 
 
     exclude(valeurRange) {
-        this.range = this.range & ~valeurRange;
+        this.range &= ~valeurRange;
     }
 
     include(valeurRange) {
-        this.range = this.range & valeurRange;
+        this.range |= valeurRange;
     }
 
 
