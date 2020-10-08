@@ -1,9 +1,9 @@
-# GenerateurMDP-JS
+# Generateur de Mot de passe 
 JSbin ( coder en ligne) https://jsbin.com/?html,output
 
 MDN (doc en ligne) https://developer.mozilla.org/fr/docs/Web/JavaScript
 
-Support du cours: https://github.com/2itech-cda/
+Support du cours en ligne: https://github.com/2itech-cda/
 
 Stack Vincent: Front: HTML / CSS / JS ; 
 Back: GO ; 
