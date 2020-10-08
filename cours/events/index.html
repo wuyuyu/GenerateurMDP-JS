@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+
+    <a href="http://google.com" id="link">Go to google</a>
+
+    Emmet: pour écrir les contenus plus rapidement
+
+    ul>(li>a{Item $})*5 va donner:
+    <ul>
+        <li><a href="">Item 1</a></li>
+        <li><a href="">Item 2</a></li>
+        <li><a href="">Item 3</a></li>
+        <li><a href="">Item 4</a></li>
+        <li><a href="">Item 5</a></li>
+    </ul>
+
+    div>div>div va donner:
+
+    <div id="root">
+        root
+        <div id="parent">
+            parent
+            <div id="enfant">
+                enfant
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const a = document.querySelector('#link');
+        const root = document.querySelector('#root');
+        const parent = document.querySelector('#parent');
+        const enfant = document.querySelector('#enfant');
+
+        a.addEventListener('click', e =>{
+            e.preventDefault(); // ça vaut dire que ton evenement ne m'interesse pas
+            alert('nonono');
+            window.location = 'https://bing.com'; // et je redirige sur un autre chemin
+        });
+
+        // Target c'est 
+        // la direction ( donc la 3ème parametre du addEventListener()) determine si on va chercher les parants de cette élément ou pas 
+        // si true, quand on a un evenement(du meme type), il va aller chercher les parents 
+        // si false, la propagation va pas se déclencher
+        
+        // 
+        const direction = false;
+
+        root.addEventListener('click', e => {
+            alert(root.id);
+        }, direction);
+
+        parent.addEventListener('click', e => {
+            alert(parent.id);
+            e.stopPropagation(); // pour stoper le propagation
+        }, direction);
+
+        enfant.addEventListener('click', e => {
+            alert(enfant.id);
+        }, direction);
+    </script>
+</body>
+
+<style>
+    div{
+        border: 1px solid red;
+        padding: 10px;
+    }
+</style>
+</html>

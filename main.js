@@ -8,7 +8,8 @@ const slider = document.querySelector('#slider');
 const displayer = document.querySelector('#displayer');
 
 displayer.textContent = p.generate(10);
-
+displayer.style.cursor = 'pointer';
+displayer.style.backgroud = pink;
 refresh();
 
 // addEventListener('type', callback(fonction de rapelle, ), boolean: direction de l'événement)
@@ -33,6 +34,8 @@ options.addEventListener('click', e => {
         refresh();
     }
 })
+
+displayer.addEventListener('copy',)
 
 
 // pour récupérer l'endroit où utilisateur a cliqué sur la page
@@ -65,6 +68,11 @@ function rangeFormList() {
     });
    
 }
+
+
+// function qui va servir qu'une seule fois
+
+
 
 
 // p.setRange(Password.all);
