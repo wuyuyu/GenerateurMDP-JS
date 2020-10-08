@@ -58,3 +58,4 @@ const f = () => {
 	return 20;
 };
 const f = () => 20;  // encore plus simple à écrire plus besoin de colade ni return.
+:::
