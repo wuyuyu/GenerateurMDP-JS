@@ -8,9 +8,8 @@ const slider = document.querySelector('#slider');
 const displayer = document.querySelector('#displayer');
 
 displayer.textContent = p.generate(10);
-displayer.style.cursor = 'pointer';
-displayer.style.backgroud = pink;
 refresh();
+
 
 // addEventListener('type', callback(fonction de rapelle, ), boolean: direction de l'événement)
 size.addEventListener('input', event => {
@@ -35,7 +34,7 @@ options.addEventListener('click', e => {
     }
 })
 
-displayer.addEventListener('copy',)
+
 
 
 // pour récupérer l'endroit où utilisateur a cliqué sur la page
@@ -54,6 +53,8 @@ function refresh() {
     rangeFormList();
 };
 
+
+//* Créer les éléments répétitif à partir du id option */
 function rangeFormList() {
     options.innerHTML='';
     p.data.forEach(obj => {
@@ -66,7 +67,28 @@ function rangeFormList() {
         </li>
         `;
     });
-   
+    
+}
+
+
+
+// copie le mot de passe 
+
+displayer.style.cursor = 'pointer';
+displayer.style.background = '#F0F0F0';
+
+displayer.addEventListener('click', evt => {
+    copyToClipboard(evt.target.textContent);
+});
+
+function copyToClipboard(text) {
+    const dummy = document.createElement('textarea');
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+    alert('Mot de passe copié!')
 }
 
 
