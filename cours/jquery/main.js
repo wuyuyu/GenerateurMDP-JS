@@ -17,7 +17,10 @@ $('h1').text('hello word');
 const title = document.querySelector('h1');
 $(title).text('你好');
 
-$('h1').addClass('myStyle');
+$('h1').addClass('myStyle').css('background-color', 'pink');
+
+console.log($('h1').elems);
+
 
 
 

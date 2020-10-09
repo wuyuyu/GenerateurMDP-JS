@@ -18,8 +18,14 @@ class Api {
         // peut import ce qu'on met (un objet ou un element html ou un ou plusieur)
         this.wrap(selector);
 
+        this.event = new MyEvent();
+
     }
 
+    on(evt, callback) {
+        this.elems.forEach(elem => this.event.bind(evt, callback, elem));
+        return this;
+    }
     /**
      * cette méthode permet de récupérer un selector
      * ou d'envelopper un élément déjà existant.
@@ -58,18 +64,39 @@ class Api {
     }
 
     /**
+     * on ouvre/étendre la class
+     */
+    toggleClass(className) {
+        this.elems.forEach(elem => elem.classList.toggle(className));
+        return this;
+    }
+
+    removeClass(className) {
+        this.elems.forEach(elem => elem.classList.remove(className));
+        return this;
+    }
+
+    css(property, value) {
+        this.elems.forEach(elem => elem.style[property] = value);
+        return this;
+    }
+
+    /**
      * selectionner les éléments paire
      */
     even() {
-
+        this.elems = this.elems.filter((_elem, index) => index % 2 === 0);
+        return this;
     }
-
+    
     /**
      * selectionner les éléments impaire
      */
     odd() {
-
+        this.elems = this.elems.filter((_elem, index) => index % 2 === 1);
+        return this;
     }
+
 }
 
 
